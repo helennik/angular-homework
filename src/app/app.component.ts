@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, EventEmitter} from '@angular/core';
+import {ListElement} from './common/interfaces/list-element.interface';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular-homework';
+    public selectedElement: ListElement ;
 }

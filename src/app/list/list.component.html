@@ -1,0 +1,36 @@
+<div class="element-left-bottom">
+    <div class="ele-strip">
+        <ul>
+            <li *ngFor="let link of links"
+                (click)="onFilterClick(link)">
+                <a href="#">{{link}}</a>
+            </li>
+        </ul>
+    </div>
+    <div class="village">
+        <h3>Righteous indignation & like</h3>
+        <span class="line"> </span>
+        <div class="activity_box">
+            <div class="scrollbar" id="style-2">
+                <div *ngFor="let element of elementsList | elementFilter:selectedElementType;"
+                     class="activity-row"
+                     [class.selected-row]="element === selectedElement"
+                     (click)="onElementClick(element)">
+                    <div class="activity-desc">
+                        <h5>Resort Address</h5>
+                        <p>{{element.address}}</p>
+                        <h6> {{element.phone | phone}}</h6>
+                    </div>
+                    <div class="activity-img">
+                        <ul>
+                            <li *ngFor="let img of element.images">
+                                <img [src]="'../../assets/images/' + img" alt=""/>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
